@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="4">
+      <v-col sm="12" md="12" lg="12" xl="4">
         <v-card :loading="loading" class="mx-auto my-12" max-width="374">
           <v-card-title>Veri Alıyoruz</v-card-title>
           <v-card-text>
@@ -16,8 +16,8 @@
         </v-card>
       </v-col>
 
-      <v-col cols="4">
-        <v-card class="justify-center" min-width="500px" min-height="200px">
+      <v-col sm="12" md="12" lg="12" xl="4">
+        <v-card class="mx-auto my-12" width="600">
           <div class=" float-right">
             <v-btn icon>
               <v-icon>mdi-chevron-down</v-icon>
@@ -31,100 +31,277 @@
             </div>
           </v-row>
 
-          <v-row class="align-center">
-            <!--username-->
-            <div class=" mt-2 d-inline-flex">
-              <div class="">
-                <a href="" class="text-decoration-none">Title</a>
-              </div>
-              <!--tag-->
-              <div class=" pl-1">@title</div>
-              <v-spacer></v-spacer>
+          <!--username-->
+          <div class=" mt-2 d-inline-flex">
+            <div class="">
+              <a href="" class="text-decoration-none">Title</a>
+            </div>
+            <!--tag-->
+            <div class=" pl-1">@title</div>
+            <v-spacer></v-spacer>
+          </div>
+
+          <div class="mt-1 ml-16 mr-6 font-weight-bold">
+            <div v-text="meloInput"></div>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur culpa cumque dicta distinctio
+              eius excepturi iste itaque, iusto laborum magnam maiores natus omnis perferendis possimus, provident qui
+              quo sed.
             </div>
 
-            <div class=" mr-6 font-weight-bold">
-              <div v-text="meloInput"></div>
-              <div class="">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur culpa cumque dicta distinctio
-                eius excepturi iste itaque, iusto laborum magnam maiores natus omnis perferendis possimus, provident qui
-                quo sed.
-              </div>
-              <v-img class="rounded-xl" height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png"></v-img>
-            </div>
-          </v-row>
-          <v-card-actions class="ml-11 pl-3 mr-16 pr-16">
-            <v-btn icon>
-              <v-icon>mdi-tooltip-outline</v-icon>
-            </v-btn>
-            <v-spacer></v-spacer>
-            <v-btn icon>
-              <v-icon>mdi-twitter-retweet</v-icon>
-            </v-btn>
-            <v-spacer></v-spacer>
-            <v-btn v-if="visible" icon @click="like">
-              <v-icon>mdi-heart</v-icon>
-            </v-btn>
-            <v-btn v-if="!visible" icon @click="unlike">
-              <v-icon>mdi-heart-outline</v-icon>
-            </v-btn>
-            <v-spacer></v-spacer>
+            <v-img
+                :src="
+                'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
+              "
+                :lazy-src="
+                'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
+              "
+                height="100%"
+                width="100%"
+                class="mt-1 rounded-xl"
+            ></v-img>
 
-            <v-btn icon>
-              <v-icon>mdi-export-variant</v-icon>
-            </v-btn>
-          </v-card-actions>
+            <v-card-actions class="mr-16">
+
+                <v-btn class="d-inline-flex" icon>
+                <v-icon>mdi-tooltip-outline</v-icon>
+              </v-btn>
+                <v-spacer></v-spacer>
+                <v-btn class="d-inline-flex" icon>
+                  <v-icon>mdi-twitter-retweet</v-icon>
+                </v-btn>
+                <v-spacer></v-spacer>
+                <v-btn v-if="visible" icon @click="like">
+                  <v-icon>mdi-heart</v-icon>
+                </v-btn>
+                <v-btn v-if="!visible" icon @click="unlike">
+                  <v-icon>mdi-heart-outline</v-icon>
+                </v-btn>
+                <v-spacer></v-spacer>
+
+                <v-btn icon>
+                  <v-icon>mdi-export-variant</v-icon>
+                </v-btn>
+
+            </v-card-actions>
+          </div>
         </v-card>
       </v-col>
-      <v-col cols="4">
-        <v-card :loading="loading" class="mx-auto my-12" max-width="374">
-          <template slot="progress">
-            <v-progress-linear color="deep-purple" height="10" indeterminate></v-progress-linear>
-          </template>
 
-          <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png"></v-img>
 
-          <v-card-title>{{ meloInput }}</v-card-title>
-
-          <v-card-text>
-            <v-row align="center" class="mx-0">
-              <v-rating :value="4.5" color="amber" dense half-increments readonly size="14"></v-rating>
-
-              <div class=" grey--text ml-4" v-text="meloInput"></div>
-            </v-row>
-
-            <div class="my-4 subtitle-1">
-              $ • Italian, Cafe
-            </div>
-
-            <div>
-              Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.
-            </div>
-          </v-card-text>
-
-          <v-divider class="mx-4"></v-divider>
-
-          <v-card-title>Tonight's availability</v-card-title>
-
-          <v-card-text>
-            <v-chip-group v-model="selection" active-class="deep-purple accent-4 white--text" column>
-              <v-chip>5:30PM</v-chip>
-
-              <v-chip>7:30PM</v-chip>
-
-              <v-chip>8:00PM</v-chip>
-
-              <v-chip>9:00PM</v-chip>
-            </v-chip-group>
-          </v-card-text>
-
-          <v-card-actions>
-            <v-btn color="deep-purple lighten-2" text @click="reserve">
-              Reserve
+      <v-col sm="12" md="12" lg="12" xl="4">
+        <v-card class="mx-auto my-12" width="600">
+          <div class=" float-right">
+            <v-btn icon>
+              <v-icon>mdi-chevron-down</v-icon>
             </v-btn>
-          </v-card-actions>
-        </v-card></v-col
-      >
-      >
+          </div>
+          <v-row class=" float-left ml-2 mt-2 mr-2">
+            <div>
+              <v-avatar>
+                <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+              </v-avatar>
+            </div>
+          </v-row>
+
+          <!--username-->
+          <div class=" mt-2 d-inline-flex">
+            <div class="">
+              <a href="" class="text-decoration-none">Title</a>
+            </div>
+            <!--tag-->
+            <div class=" pl-1">@title</div>
+            <v-spacer></v-spacer>
+          </div>
+
+          <div class="mt-1 ml-16 mr-6 font-weight-bold">
+            <div v-text="meloInput"></div>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur culpa cumque dicta distinctio
+              eius excepturi iste itaque, iusto laborum magnam maiores natus omnis perferendis possimus, provident qui
+              quo sed.
+            </div>
+
+            <v-img
+                :src="
+                'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
+              "
+                :lazy-src="
+                'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
+              "
+                height="100%"
+                width="100%"
+                class="mt-1 rounded-xl"
+            ></v-img>
+
+            <v-card-actions class="mr-16">
+
+              <v-btn class="d-inline-flex" icon>
+                <v-icon>mdi-tooltip-outline</v-icon>
+              </v-btn>
+              <v-spacer></v-spacer>
+              <v-btn class="d-inline-flex" icon>
+                <v-icon>mdi-twitter-retweet</v-icon>
+              </v-btn>
+              <v-spacer></v-spacer>
+              <v-btn v-if="visible" icon @click="like">
+                <v-icon>mdi-heart</v-icon>
+              </v-btn>
+              <v-btn v-if="!visible" icon @click="unlike">
+                <v-icon>mdi-heart-outline</v-icon>
+              </v-btn>
+              <v-spacer></v-spacer>
+
+              <v-btn icon>
+                <v-icon>mdi-export-variant</v-icon>
+              </v-btn>
+
+            </v-card-actions>
+          </div>
+        </v-card>
+      </v-col>
+      <v-col sm="12" md="12" lg="12" xl="4">
+        <v-card class="mx-auto my-12" width="600">
+          <div class=" float-right">
+            <v-btn icon>
+              <v-icon>mdi-chevron-down</v-icon>
+            </v-btn>
+          </div>
+          <v-row class=" float-left ml-2 mt-2 mr-2">
+            <div>
+              <v-avatar>
+                <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+              </v-avatar>
+            </div>
+          </v-row>
+
+          <!--username-->
+          <div class=" mt-2 d-inline-flex">
+            <div class="">
+              <a href="" class="text-decoration-none">Title</a>
+            </div>
+            <!--tag-->
+            <div class=" pl-1">@title</div>
+            <v-spacer></v-spacer>
+          </div>
+
+          <div class="mt-1 ml-16 mr-6 font-weight-bold">
+            <div v-text="meloInput"></div>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur culpa cumque dicta distinctio
+              eius excepturi iste itaque, iusto laborum magnam maiores natus omnis perferendis possimus, provident qui
+              quo sed.
+            </div>
+
+            <v-img
+                :src="
+                'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
+              "
+                :lazy-src="
+                'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
+              "
+                height="100%"
+                width="100%"
+                class="mt-1 rounded-xl"
+            ></v-img>
+
+            <v-card-actions class="mr-16">
+
+              <v-btn class="d-inline-flex" icon>
+                <v-icon>mdi-tooltip-outline</v-icon>
+              </v-btn>
+              <v-spacer></v-spacer>
+              <v-btn class="d-inline-flex" icon>
+                <v-icon>mdi-twitter-retweet</v-icon>
+              </v-btn>
+              <v-spacer></v-spacer>
+              <v-btn v-if="visible" icon @click="like">
+                <v-icon>mdi-heart</v-icon>
+              </v-btn>
+              <v-btn v-if="!visible" icon @click="unlike">
+                <v-icon>mdi-heart-outline</v-icon>
+              </v-btn>
+              <v-spacer></v-spacer>
+
+              <v-btn icon>
+                <v-icon>mdi-export-variant</v-icon>
+              </v-btn>
+
+            </v-card-actions>
+          </div>
+        </v-card>
+      </v-col>
+      <v-col sm="12" md="12" lg="12" xl="4">
+        <v-card class="mx-auto my-12" width="600">
+          <div class=" float-right">
+            <v-btn icon>
+              <v-icon>mdi-chevron-down</v-icon>
+            </v-btn>
+          </div>
+          <v-row class=" float-left ml-2 mt-2 mr-2">
+            <div>
+              <v-avatar>
+                <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+              </v-avatar>
+            </div>
+          </v-row>
+
+          <!--username-->
+          <div class=" mt-2 d-inline-flex">
+            <div class="">
+              <a href="" class="text-decoration-none">Title</a>
+            </div>
+            <!--tag-->
+            <div class=" pl-1">@title</div>
+            <v-spacer></v-spacer>
+          </div>
+
+          <div class="mt-1 ml-16 mr-6 font-weight-bold">
+            <div v-text="meloInput"></div>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur culpa cumque dicta distinctio
+              eius excepturi iste itaque, iusto laborum magnam maiores natus omnis perferendis possimus, provident qui
+              quo sed.
+            </div>
+
+            <v-img
+                :src="
+                'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
+              "
+                :lazy-src="
+                'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
+              "
+                height="100%"
+                width="100%"
+                class="mt-1 rounded-xl"
+            ></v-img>
+
+            <v-card-actions class="mr-16">
+
+              <v-btn class="d-inline-flex" icon>
+                <v-icon>mdi-tooltip-outline</v-icon>
+              </v-btn>
+              <v-spacer></v-spacer>
+              <v-btn class="d-inline-flex" icon>
+                <v-icon>mdi-twitter-retweet</v-icon>
+              </v-btn>
+              <v-spacer></v-spacer>
+              <v-btn v-if="visible" icon @click="like">
+                <v-icon>mdi-heart</v-icon>
+              </v-btn>
+              <v-btn v-if="!visible" icon @click="unlike">
+                <v-icon>mdi-heart-outline</v-icon>
+              </v-btn>
+              <v-spacer></v-spacer>
+
+              <v-btn icon>
+                <v-icon>mdi-export-variant</v-icon>
+              </v-btn>
+
+            </v-card-actions>
+          </div>
+        </v-card>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -159,6 +336,7 @@ export default {
         this.visible = true;
       }
     },
+    photo() {},
 
     reserve() {
       this.loading = true;

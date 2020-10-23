@@ -7,7 +7,8 @@
             <v-icon class="mr-1">mdi-home</v-icon>
             Anasayfa
           </v-btn>
-          <h1>sssa</h1>
+          <v-btn v-if="$route.name === 'Home'">sssa</v-btn>
+          <v-btn v-else>dada</v-btn>
         </v-card>
       </v-col>
 
@@ -54,6 +55,7 @@
           <div class="mt-1 ml-16 mr-6 font-weight-bold">
             <div v-text="meloInput"></div>
             <div>
+              <router-link to="/explore">explore</router-link>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur culpa cumque dicta distinctio
               eius excepturi iste itaque, iusto laborum magnam maiores natus omnis perferendis possimus, provident qui
               quo sed.
@@ -309,7 +311,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
   data: () => ({
     loading: false,
     selection: 1,

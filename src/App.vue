@@ -20,40 +20,50 @@
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
+
       <v-app-bar class="d-xl-none" flat color="white" app clipped-left>
         <v-app-bar-nav-icon @click="drawer = !drawer" />
-        <v-toolbar-title class="align-center">
-          <span class="title">Roythox</span>
-        </v-toolbar-title>
+
+        <v-spacer></v-spacer>
+        <v-btn ripple="false" color="blue" icon>
+          <router-link class="text-decoration-none" to="/">
+            <v-icon>mdi-bird</v-icon>
+          </router-link>
+        </v-btn>
+        <v-spacer></v-spacer>
       </v-app-bar>
 
       <v-app-bar class="d-none d-xl-block" color="white" app flat>
         <v-spacer />
-
-        <router-link to="/" class="font-weight-bold text-h3">Twitter</router-link>
+        <router-link to="/" class="black--text font-weight-bold text-h3 text-decoration-none">Twitter</router-link>
         <v-spacer />
       </v-app-bar>
     </div>
 
     <v-main>
-      <router-view />
+      <v-row class="align-baseline">
+        <v-col class="d-none d-xl-block" sm="12" md="12" lg="12" xl="4">
+          <Navigation />
+        </v-col>
+        <v-col sm="12" md="12" lg="12" xl="4">
+          <router-view />
+        </v-col>
+      </v-row>
     </v-main>
   </v-app>
 </template>
 
 <script>
+import Navigation from '@/components/Navigation';
 export default {
   name: 'App',
 
-  components: {},
+  components: { Navigation },
 
   data: () => ({
     items: [
-      { icon: 'mdi-trending-up', text: 'Popular Content' },
-      { icon: 'mdi-youtube-subscription', text: 'Folow' },
-      { icon: 'mdi-history', text: 'History' },
-      { icon: 'mdi-playlist-play', text: 'List' },
-      { icon: 'mdi-clock', text: 'Watch Later' }
+      { icon: 'mdi-home', text: 'Anasayfa', to: '/' },
+      { icon: 'mdi-pound', text: 'Keşfet', to: '/explore' }
     ],
     drawer: false,
     menu: false,

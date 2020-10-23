@@ -1,16 +1,27 @@
 <template>
   <v-container>
     <v-row>
-      <v-col sm="12" md="12" lg="12" xl="4">
+      <!--<v-col sm="12" md="12" lg="12" xl="4">
         <v-card class="mx-auto my-12" color="transparent" max-width="350">
-          <v-btn :ripple="false" text class="font-weight-bold black--text">
-            <v-icon class="mr-1">mdi-home</v-icon>
-            Anasayfa
+
+
+          <v-btn :ripple="false" text class="font-weight-bold black&#45;&#45;text">
+            <v-icon v-if="$route.name === 'Home'" color="blue">mdi-home</v-icon>
+            <v-icon v-else>mdi-home</v-icon>
+            <router-link v-if="$route.name === 'Home'" class="blue&#45;&#45;text text-decoration-none" to="/">Anasayfa</router-link>
+            <router-link v-else class="text-decoration-none black&#45;&#45;text" to="/">Anasayfa</router-link>
           </v-btn>
-          <v-btn v-if="$route.name === 'Home'">sssa</v-btn>
-          <v-btn v-else>dada</v-btn>
+
+
+          <v-btn :ripple="false" text class="d-block font-weight-bold black&#45;&#45;text">
+            <v-icon v-if="$route.name === 'Explore'" color="blue">mdi-pound</v-icon>
+            <v-icon v-else>mdi-pound</v-icon>
+            <router-link v-if="$route.name === 'Explore'" class="blue&#45;&#45;text text-decoration-none" to="/explore">Keşfet</router-link>
+            <router-link v-else class="text-decoration-none black&#45;&#45;text" to="/explore">Keşfet</router-link>
+          </v-btn>
+
         </v-card>
-      </v-col>
+      </v-col>-->
 
       <!--<v-col sm="12" md="12" lg="12" xl="4">
         <v-card :loading="loading" class=" mx-auto my-12" max-width="400">
@@ -27,7 +38,7 @@
         </v-card>
       </v-col>-->
 
-      <v-col sm="12" md="12" lg="12" xl="4">
+      <v-col sm="12" md="12" lg="12" xl="12">
         <v-card class="mx-auto my-12" width="600">
           <div class=" float-right">
             <v-btn icon>
@@ -53,25 +64,10 @@
           </div>
 
           <div class="mt-1 ml-16 mr-6 font-weight-bold">
-            <div v-text="meloInput"></div>
             <div>
-              <router-link to="/">home</router-link>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur culpa cumque dicta distinctio
-              eius excepturi iste itaque, iusto laborum magnam maiores natus omnis perferendis possimus, provident qui
-              quo sed.
+              No cars here
             </div>
 
-            <v-img
-              :src="
-                'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
-              "
-              :lazy-src="
-                'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
-              "
-              height="100%"
-              width="100%"
-              class="mt-1 rounded-xl"
-            ></v-img>
 
             <v-card-actions class="mr-16">
               <v-btn class="d-inline-flex" color="orange" icon>

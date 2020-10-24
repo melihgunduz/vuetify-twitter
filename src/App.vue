@@ -1,14 +1,14 @@
 <template>
   <v-app>
     <div>
-      <v-navigation-drawer class="d-xl-none" v-model="drawer" app floating temporary>
+      <v-navigation-drawer class="d-xl-none d-lg-none " v-model="drawer" app floating temporary>
         <v-list dense>
           <v-row class="ma-2 mb-3">
             <v-toolbar-title class="align-center">
               <span class="title">Roythox</span>
             </v-toolbar-title>
           </v-row>
-          <v-list-item v-for="item in items" :key="item.icon" link>
+          <v-list-item v-for="item in items" :key="item.icon" :to="item.to">
             <v-list-item-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-action>
@@ -17,6 +17,7 @@
                 {{ item.text }}
               </v-list-item-title>
             </v-list-item-content>
+            <v-list-tile :to="item.to"></v-list-tile>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
@@ -33,21 +34,21 @@
         <v-spacer></v-spacer>
       </v-app-bar>
 
-      <v-app-bar class="d-none d-xl-block" color="white" app flat>
+      <v-app-bar class="d-none d-xl-block d-lg-block" color="white" app flat>
         <v-spacer />
         <router-link to="/" class="black--text font-weight-bold text-h3 text-decoration-none">Twitter</router-link>
         <v-spacer />
       </v-app-bar>
     </div>
-
     <v-main>
-      <v-row class="align-baseline">
-        <v-col class="d-none d-xl-block" sm="12" md="12" lg="12" xl="4">
-          <Navigation />
+      <v-row class="ma-2 align-baseline">
+        <v-col class=" d-none d-xl-block d-lg-block" sm="12" md="12" lg="2" xl="4">
+          <Navigation  />
         </v-col>
-        <v-col sm="12" md="12" lg="12" xl="4">
+        <v-col sm="12" md="12" lg="6" xl="4">
           <router-view />
         </v-col>
+        <BottomNav></BottomNav>
       </v-row>
     </v-main>
   </v-app>
@@ -55,15 +56,16 @@
 
 <script>
 import Navigation from '@/components/Navigation';
+import BottomNav from "@/components/BottomNav";
 export default {
   name: 'App',
 
-  components: { Navigation },
+  components: { Navigation, BottomNav },
 
   data: () => ({
     items: [
-      { icon: 'mdi-home', text: 'Anasayfa', to: '/' },
-      { icon: 'mdi-pound', text: 'Keşfet', to: '/explore' }
+      { icon: 'mdi-avatar', text: 'Profil', to: '/' },
+      { icon: 'mdi-lists', text: 'Listeler', to: '/explore' }
     ],
     drawer: false,
     menu: false,

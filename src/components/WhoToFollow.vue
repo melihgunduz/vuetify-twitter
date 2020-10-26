@@ -14,6 +14,12 @@
             <v-list-item-subtitle class="d-inline-flex" v-html="item.subtitle"></v-list-item-subtitle>
           </v-list-item-content>
 
+          <v-list-item-action>
+            <v-btn color="blue" outlined rounded class="font-weight-bold text-capitalize blue--text" text>
+              Takip et
+            </v-btn>
+          </v-list-item-action>
+
         </v-list-item>
       </template>
     </v-list>
@@ -28,21 +34,21 @@ export default {
         avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
         title: 'Brian',
         subtitle: `<span class="font-weight-bold">@brian</span>`,
-        follow:'<v-btn>sss</v-btn>'
+        follow: '<v-btn>sss</v-btn>'
       },
       { divider: true, inset: true },
       {
         avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
         title: 'James',
         subtitle: `<span class="font-weight-bold">@james</span>`,
-        follow:'<v-btn>sss</v-btn>'
+        follow: '<v-btn>sss</v-btn>'
       },
       { divider: true, inset: true },
       {
         avatar: 'https://cdn.vuetifyjs.com/images/john.jpg',
         title: 'John',
         subtitle: '<span class="font-weight-bold">@john</span> ',
-        follow:'<v-btn>sss</v-btn>'
+        follow: '<v-btn>sss</v-btn>'
       }
     ]
   }),
@@ -51,3 +57,5 @@ export default {
   theme: false
 };
 </script>
+
+

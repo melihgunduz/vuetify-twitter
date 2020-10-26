@@ -1,9 +1,7 @@
 <template>
   <v-container>
     <v-row class="pl-3">
-
-      <v-card class="mx-auto"  width="600">
-        <v-divider />
+      <v-card class="mx-auto" color="#f5f8fa" flat width="600">
         <div class=" float-right">
           <v-btn icon>
             <v-icon>mdi-chevron-down</v-icon>
@@ -34,7 +32,7 @@
             eius excepturi iste itaque, iusto laborum magnam maiores natus omnis perferendis possimus, provident qui quo
             sed.
           </div>
-<!--
+          <!--
           <v-img
             :src="
               'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
@@ -75,7 +73,7 @@
         </div>
       </v-card>
 
-      <v-card class="mx-auto"  width="600">
+      <v-card class="mx-auto" color="#f5f8fa" flat width="600">
         <v-divider />
         <div class=" float-right">
           <v-btn icon>
@@ -109,15 +107,15 @@
           </div>
 
           <v-img
-              :src="
+            :src="
               'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
             "
-              :lazy-src="
+            :lazy-src="
               'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
             "
-              height="100%"
-              width="100%"
-              class="mt-1 rounded-xl"
+            height="100%"
+            width="100%"
+            class="mt-1 rounded-xl"
           ></v-img>
 
           <v-card-actions class="mr-16">
@@ -148,7 +146,7 @@
         </div>
       </v-card>
 
-      <v-card class="mx-auto"  width="600">
+      <v-card class="mx-auto" color="#f5f8fa" flat width="600">
         <v-divider />
         <div class=" float-right">
           <v-btn icon>
@@ -182,15 +180,15 @@
           </div>
 
           <v-img
-              :src="
+            :src="
               'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
             "
-              :lazy-src="
+            :lazy-src="
               'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
             "
-              height="100%"
-              width="100%"
-              class="mt-1 rounded-xl"
+            height="100%"
+            width="100%"
+            class="mt-1 rounded-xl"
           ></v-img>
 
           <v-card-actions class="mr-16">
@@ -221,7 +219,7 @@
         </div>
       </v-card>
 
-      <v-card class="mx-auto"  width="600">
+      <v-card class="mx-auto" color="#f5f8fa" flat width="600">
         <v-divider />
         <div class=" float-right">
           <v-btn icon>
@@ -255,15 +253,15 @@
           </div>
 
           <v-img
-              :src="
+            :src="
               'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
             "
-              :lazy-src="
+            :lazy-src="
               'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
             "
-              height="100%"
-              width="100%"
-              class="mt-1 rounded-xl"
+            height="100%"
+            width="100%"
+            class="mt-1 rounded-xl"
           ></v-img>
 
           <v-card-actions class="mr-16">

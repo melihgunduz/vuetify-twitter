@@ -17,7 +17,6 @@
                 {{ item.text }}
               </v-list-item-title>
             </v-list-item-content>
-            <v-list-tile :to="item.to"></v-list-tile>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
@@ -26,7 +25,7 @@
         <v-app-bar-nav-icon @click="drawer = !drawer" />
 
         <v-spacer></v-spacer>
-        <v-btn ripple="false" color="blue" icon>
+        <v-btn color="blue" icon>
           <router-link class="text-decoration-none" to="/">
             <v-icon>mdi-bird</v-icon>
           </router-link>
@@ -34,7 +33,7 @@
         <v-spacer></v-spacer>
       </v-app-bar>
 
-      <v-app-bar class="d-none d-xl-block d-lg-block" color="white" app flat>
+      <v-app-bar height="50" class="d-none d-xl-block d-lg-block" color="white" app flat>
         <v-spacer />
         <router-link to="/" class="black--text font-weight-bold text-h3 text-decoration-none">Twitter</router-link>
         <v-spacer />
@@ -42,39 +41,44 @@
     </div>
     <v-main>
       <v-row class="ma-2 align-baseline">
-        <v-col class=" d-none d-xl-block d-lg-block" sm="12" md="12" lg="2" xl="4">
-          <Navigation  />
+        <v-col class=" d-none d-xl-block d-lg-block" sm="12" md="12" lg="1" xl="2">
         </v-col>
-        <v-col sm="12" md="12" lg="6" xl="4">
+        <Navigation class=" d-none d-xl-block d-lg-block"  />
+        <v-col sm="12" md="12" lg="5" xl="4">
           <router-view />
         </v-col>
-        <BottomNav></BottomNav>
+        <v-col v-if="$route.name==='Home' || $route.name==='Profile' || $route.name==='Notifications' " lg="3" xl="4">
+      <Agenda  class="ml-3 d-none d-xl-block d-lg-block"></Agenda>
+          <WhoToFollow class="mt-5 ml-3"></WhoToFollow>
+        </v-col>
+          <BottomNav></BottomNav>
       </v-row>
     </v-main>
+
   </v-app>
 </template>
+
+
 
 <script>
 import Navigation from '@/components/Navigation';
 import BottomNav from "@/components/BottomNav";
+import Agenda from "@/components/Agenda";
+import WhoToFollow from "@/components/WhoToFollow";
 export default {
   name: 'App',
 
-  components: { Navigation, BottomNav },
+  components: {WhoToFollow, Navigation, BottomNav, Agenda },
 
   data: () => ({
     items: [
-      { icon: 'mdi-avatar', text: 'Profil', to: '/' },
+      { icon: 'mdi-account', text: 'Profil', to: '/profile' },
       { icon: 'mdi-lists', text: 'Listeler', to: '/explore' }
     ],
     drawer: false,
     menu: false,
     theme: false
   }),
-  watch: {
-    theme: function(next) {
-      this.$vuetify.theme.dark = next;
-    }
-  }
+
 };
 </script>

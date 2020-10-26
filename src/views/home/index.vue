@@ -1,9 +1,7 @@
 <template>
-  <v-container>
     <v-row>
       <Post></Post>
     </v-row>
-  </v-container>
 </template>
 
 <script>

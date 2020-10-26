@@ -41,34 +41,34 @@
     </div>
     <v-main>
       <v-row class="ma-2 align-baseline">
-        <v-col class=" d-none d-xl-block d-lg-block" sm="12" md="12" lg="1" xl="2">
-        </v-col>
-        <Navigation class=" d-none d-xl-block d-lg-block"  />
+        <v-col class=" d-none d-xl-block d-lg-block" sm="12" md="12" lg="1" xl="2"> </v-col>
+        <Navigation class=" d-none d-xl-block d-lg-block" />
         <v-col sm="12" md="12" lg="5" xl="4">
           <router-view />
         </v-col>
-        <v-col v-if="$route.name==='Home' || $route.name==='Profile' || $route.name==='Notifications' " lg="3" xl="4">
-      <Agenda  class="ml-3 d-none d-xl-block d-lg-block"></Agenda>
-          <WhoToFollow class="mt-5 ml-3"></WhoToFollow>
+        <v-col
+          v-if="$route.name === 'Home' || $route.name === 'Profile' || $route.name === 'Notifications'"
+          lg="3"
+          xl="4"
+        >
+          <Agenda class="ml-3 d-none d-xl-block d-lg-block"></Agenda>
+          <WhoToFollow class="d-none d-xl-block d-lg-block mt-5 ml-3"></WhoToFollow>
         </v-col>
-          <BottomNav></BottomNav>
+        <BottomNav></BottomNav>
       </v-row>
     </v-main>
-
   </v-app>
 </template>
 
-
-
 <script>
 import Navigation from '@/components/Navigation';
-import BottomNav from "@/components/BottomNav";
-import Agenda from "@/components/Agenda";
-import WhoToFollow from "@/components/WhoToFollow";
+import BottomNav from '@/components/BottomNav';
+import Agenda from '@/components/Agenda';
+import WhoToFollow from '@/components/WhoToFollow';
 export default {
   name: 'App',
 
-  components: {WhoToFollow, Navigation, BottomNav, Agenda },
+  components: { WhoToFollow, Navigation, BottomNav, Agenda },
 
   data: () => ({
     items: [
@@ -78,7 +78,6 @@ export default {
     drawer: false,
     menu: false,
     theme: false
-  }),
-
+  })
 };
 </script>

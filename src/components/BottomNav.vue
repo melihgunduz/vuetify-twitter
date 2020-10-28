@@ -1,12 +1,6 @@
 <template>
   <div>
-    <v-bottom-navigation
-      class="text-center align-center justify-center d-xl-none d-lg-none"
-      color="blue"
-      horizontal
-      app
-      flat
-    >
+    <v-bottom-navigation class="text-center align-center justify-center d-xl-none d-lg-none" horizontal app flat>
       <v-btn class="flex-fill justify-center" icon :ripple="false" to="/">
         <v-icon v-if="$route.name === 'Home'" color="blue">mdi-home</v-icon>
         <v-icon v-else>mdi-home</v-icon>

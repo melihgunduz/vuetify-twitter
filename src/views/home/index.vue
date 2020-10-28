@@ -1,16 +1,16 @@
 <template>
-    <v-row>
-      <Post></Post>
-    </v-row>
+  <v-row>
+    <Post></Post>
+  </v-row>
 </template>
 
 <script>
-import Post from "@/components/Post";
+import Post from '@/components/Post';
 export default {
   name: 'Home',
-  components: {Post},
+  components: { Post },
   data: () => ({
-  }),
 
+  })
 };
 </script>

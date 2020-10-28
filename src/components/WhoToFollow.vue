@@ -15,7 +15,7 @@
           </v-list-item-content>
 
           <v-list-item-action>
-            <v-btn color="blue" outlined rounded class="font-weight-bold text-capitalize blue--text" text>
+            <v-btn color="blue" outlined rounded class="font-weight-bold text-capitalize blue--text" >
               Takip et
             </v-btn>
           </v-list-item-action>

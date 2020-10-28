@@ -1,6 +1,6 @@
 <template>
   <v-col md="12">
-    <v-card class="d-none d-lg-block d-xl-block mx-auto mb-3" color="#f5f8fa" flat width="600">
+    <v-card class="d-none d-lg-block d-xl-block mx-auto" color="#f5f8fa" flat width="600">
       <v-divider></v-divider>
       <v-row class=" float-left ml-2 mt-2 mr-2">
         <div>
@@ -12,7 +12,7 @@
 
       <div class=" ml-16 mr-6">
         <v-textarea
-          v-model="bio"
+          v-model="post"
           :rules="[rules.counter]"
           counter
           maxlength="100"
@@ -21,10 +21,53 @@
           rows="1"
           class="subtitle-1"
         ></v-textarea>
+
+        <!--
         <v-btn class="text-capitalize text-subtitle-2 " color="blue" text>
           <v-icon>mdi-earth</v-icon>
           <div>Herkes yanıtlayabilir</div>
-        </v-btn>
+           </v-btn>-->
+        <v-menu max-width="300" offset-y rounded :close-on-click="closeOnClick">
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn class="text-capitalize text-subtitle-2" color="blue" text v-bind="attrs" v-on="on">
+              <v-icon>mdi-earth</v-icon>
+              <div>{{ whoCanSee }}</div>
+            </v-btn>
+          </template>
+
+          <v-list>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title class="font-weight-bold">
+                  Kimler yanıtlayabilir?
+                </v-list-item-title>
+                <v-list-item-subtitle class="">Bu tweeti kimlerin yanıtlayabileceğini seç.</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+              <v-btn class=" text-capitalize d-block justify-start" text>
+                <v-icon color="blue">mdi-earth</v-icon>
+                <div class="text-capitalize text-body-1 font-weight-regular ml-2 black--text"  @click="submit">Herkes</div>
+              </v-btn>
+            </v-list-item>
+            <v-list-item>
+              <v-btn class=" text-capitalize d-block justify-start" text>
+                <v-icon color="blue">mdi-account-multiple</v-icon>
+                <div class="text-capitalize text-body-1 font-weight-regular ml-2 black--text">
+                  Takip ettiğin kişiler
+                </div>
+              </v-btn>
+            </v-list-item>
+            <v-list-item>
+              <v-btn class=" text-capitalize d-block justify-start" text>
+                <v-icon color="blue">mdi-at</v-icon>
+                <div class="text-capitalize text-body-1 font-weight-regular ml-2 black--text">
+                  Yalnızca bahsettiğin kişiler
+                </div>
+              </v-btn>
+            </v-list-item>
+          </v-list>
+        </v-menu>
 
         <v-divider></v-divider>
 
@@ -45,13 +88,16 @@
           </v-btn>
 
           <v-spacer></v-spacer>
-          <v-btn text rounded outlined class="text-capitalize" color="blue">
+          <v-btn rounded outlined class="text-capitalize" color="blue">
             Tweetle
           </v-btn>
         </v-card-actions>
       </div>
     </v-card>
 
+    <v-card class="mx-auto mt-3" color="#f5f8fa" flat width="600">
+      <div></div>
+    </v-card>
 
     <v-card class="mx-auto" color="#f5f8fa" flat width="600">
       <div class=" float-right">
@@ -350,14 +396,23 @@ export default {
       counter: value => value.length <= 100 || 'Max 100 characters'
     },
 
+     whoCanSee: "Herkes yanıtlayabilir",
+
     loading: false,
     selection: 1,
     meloInput: null,
     retweet: false,
     visibleRt: false,
     liked: false,
-    visibleLike: false
+    visibleLike: false,
+
+    methods: {
+      submit() {
+        this.whoCanSee === 'Something else'
+      }
+    }
   }),
+
 
   /*watch: {
     meloInput(deger) {

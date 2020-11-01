@@ -32,6 +32,7 @@
         <v-spacer></v-spacer>
       </v-app-bar>
     </div>
+
     <v-main>
       <v-row class="ml-1">
         <v-col class=" d-none d-xl-block d-lg-block" sm="12" md="12" lg="1" xl="2"> </v-col>

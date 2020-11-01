@@ -1,6 +1,25 @@
 <template>
   <v-row>
   <v-card flat class="mx-auto" width="600">
+
+
+    <v-toolbar flat>
+      <v-text-field
+          flat
+          rounded
+          hide-details
+          label="Twitter'da ara"
+          clearable
+          prepend-inner-icon="mdi-magnify"
+          solo-inverted
+      ></v-text-field>
+
+      <v-btn color="transparent" depressed small>
+        <v-icon color="blue">mdi-cog-outline</v-icon>
+      </v-btn>
+
+    </v-toolbar>
+
     <v-img
       :src="
         'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'

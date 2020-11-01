@@ -14,6 +14,16 @@ const routes = [
     path: '/explore',
     name: 'Explore',
     component: () => import(/* webpackChunkName: "profile" */ '../views/explore/')
+  },
+  {
+    path: '/notifications',
+    name: 'Notifications',
+    component: () => import(/* webpackChunkName: "profile" */ '../views/notifications/')
+  },
+  {
+    path: '/bookmarks',
+    name: 'Bookmarks',
+    component: () => import(/* webpackChunkName: "profile" */ '../views/bookmarks/')
   }
 ];
 

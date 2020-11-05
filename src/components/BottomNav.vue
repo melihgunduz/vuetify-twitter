@@ -3,7 +3,7 @@
     <v-bottom-navigation class="text-center align-center justify-center d-xl-none d-lg-none" horizontal app flat>
       <v-btn class="flex-fill justify-center" icon :ripple="false" to="/">
         <v-icon v-if="$route.name === 'Home'" color="blue">mdi-home</v-icon>
-        <v-icon v-else>mdi-home</v-icon>
+        <v-icon v-else>mdi-home-outline</v-icon>
       </v-btn>
 
       <v-btn class="flex-fill" icon :ripple="false" to="/explore">

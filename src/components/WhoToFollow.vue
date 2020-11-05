@@ -1,5 +1,6 @@
 <template>
-  <v-card flat class="mt-3 rounded-lg" color="#f5f8fa" width="350">
+  <v-col>
+  <v-card flat class=" rounded-lg" color="#f5f8fa" width="350">
     <div class="mx-4 pt-1 align-center font-weight-black text-h6">Kimi takip etmeli</div>
     <v-divider></v-divider>
     <v-list color="transparent">
@@ -24,6 +25,7 @@
       </template>
     </v-list>
   </v-card>
+  </v-col>
 </template>
 
 <script>
@@ -57,5 +59,4 @@ export default {
   theme: false
 };
 </script>
-
 

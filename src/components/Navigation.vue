@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-card flat class=" mx-auto " color="transparent" width="250">
+  <div class="d-none">
+    <v-card flat class="rounded-lg mx-auto " width="250">
       <v-btn
         width="100%"
         to="/"
@@ -15,6 +15,7 @@
         width="100%"
         to="/"
         depressed
+        text
         color="transparent"
         class="mt-4 text-capitalize font-weight-bold text-xl-h6 justify-start blue--text "
       >
@@ -27,10 +28,11 @@
       </v-btn>
 
       <v-btn
-        to="/explore"
-        depressed
-        color="transparent"
-        class=" text-capitalize font-weight-bold text-xl-h6 d-block my-6 justify-start blue--text font-weight-bold"
+          width="100%"
+          to="/explore"
+          depressed
+          color="transparent"
+          class="mt-4 text-capitalize font-weight-bold text-xl-h6 justify-start blue--text "
       >
         <v-icon v-if="$route.name === 'Explore'" color="blue">mdi-pound</v-icon>
         <v-icon v-else color="black">mdi-pound</v-icon>
@@ -42,10 +44,11 @@
 
 
       <v-btn
-        to="/notifications"
-        depressed
-        color="transparent"
-        class="text-capitalize font-weight-bold text-xl-h6 d-block my-6 justify-start blue--text font-weight-bold"
+          width="100%"
+          to="/notifications"
+          depressed
+          color="transparent"
+          class="mt-4 text-capitalize font-weight-bold text-xl-h6 justify-start blue--text "
       >
         <v-icon v-if="$route.name === 'Notifications'" color="blue">mdi-bell</v-icon>
         <v-icon v-else color="black">mdi-bell-outline</v-icon>
@@ -56,10 +59,11 @@
       </v-btn>
 
       <v-btn
-        to="/messages"
-        depressed
-        color="transparent"
-        class="text-capitalize font-weight-bold text-xl-h6 d-block my-6 justify-start blue--text font-weight-bold"
+          width="100%"
+          to="/messages"
+          depressed
+          color="transparent"
+          class="mt-4 text-capitalize font-weight-bold text-xl-h6 justify-start blue--text "
       >
         <v-icon v-if="$route.name === 'Messages'" color="blue">mdi-email</v-icon>
         <v-icon v-else color="black">mdi-email-outline</v-icon>
@@ -70,10 +74,11 @@
       </v-btn>
 
       <v-btn
+          width="100%"
           to="/bookmarks"
           depressed
           color="transparent"
-          class="text-capitalize font-weight-bold text-xl-h6 d-block my-6 justify-start blue--text font-weight-bold"
+          class="mt-4 text-capitalize font-weight-bold text-xl-h6 justify-start blue--text "
       >
         <v-icon v-if="$route.name === 'Bookmarks'" color="blue">mdi-bookmark</v-icon>
         <v-icon v-else color="black">mdi-bookmark-outline</v-icon>
@@ -84,10 +89,11 @@
       </v-btn>
 
       <v-btn
-        to="/account"
-        depressed
-        color="transparent"
-        class="text-capitalize font-weight-bold text-xl-h6 d-block my-6 justify-start blue--text font-weight-bold"
+          width="100%"
+          to="/account"
+          depressed
+          color="transparent"
+          class="mt-4 text-capitalize font-weight-bold text-xl-h6 justify-start blue--text "
       >
         <v-icon v-if="$route.name === 'Account'" color="blue">mdi-account</v-icon>
         <v-icon v-else color="black">mdi-account-outline</v-icon>

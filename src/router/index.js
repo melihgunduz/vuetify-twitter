@@ -24,6 +24,11 @@ const routes = [
     path: '/bookmarks',
     name: 'Bookmarks',
     component: () => import(/* webpackChunkName: "profile" */ '../views/bookmarks/')
+  },
+  {
+    path: '/messages',
+    name: 'Messages',
+    component: () => import(/* webpackChunkName: "profile" */ '../views/messages/')
   }
 ];
 

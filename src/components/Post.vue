@@ -1,5 +1,14 @@
 <template>
-  <v-col md="12">
+  <v-col class="mt-3" md="12">
+    <v-card class="d-none d-lg-block d-xl-block" flat>
+      <v-card-title>
+        <v-toolbar-title class=" d-block font-weight-black text-h6  ">Anasayfa</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn color="transparent" depressed small>
+          <v-icon color="blue">mdi-cog-outline</v-icon>
+        </v-btn>
+      </v-card-title>
+    </v-card>
     <v-card class="d-none d-lg-block d-xl-block mx-auto" color="#f5f8fa" flat width="600">
       <v-divider></v-divider>
       <v-row class=" float-left ml-2 mt-2 mr-2">
@@ -12,6 +21,7 @@
 
       <div class=" ml-16 mr-6">
         <v-textarea
+          clearable
           v-model="input"
           :rules="[rules.counter]"
           counter
@@ -96,8 +106,10 @@
         </v-card-actions>
       </div>
     </v-card>
-    <v-card class="mx-auto mt-3" color="#f5f8fa" width="600"> </v-card>
-    <v-card class="mx-auto" color="#f5f8fa" flat width="600">
+
+    <v-card class="d-none d-lg-block d-xl-block mx-auto mt-3" color="#f5f8fa" width="600"> </v-card>
+
+    <v-card class="mx-auto" color="black" flat width="600">
       <v-timeline dense clipped>
         <v-slide-x-transition group>
           <v-timeline-item v-for="event in timeline" :key="event.id" color="pink" small>
@@ -171,7 +183,6 @@
         </v-slide-x-transition>
       </v-timeline>
     </v-card>
-
 
     <v-card class="mx-auto" color="#f5f8fa" flat width="600">
       <div class=" float-right">
@@ -454,6 +465,7 @@
 export default {
   name: 'Home',
   data: () => ({
+    benched: 0,
     events: [],
     input: null,
     nonce: 0,
@@ -475,6 +487,12 @@ export default {
   computed: {
     timeline() {
       return this.events.slice().reverse();
+    },
+    items() {
+      return Array.from({ length: this.length }, (k, v) => v + 1);
+    },
+    length() {
+      return 5;
     }
   },
 
@@ -512,7 +530,7 @@ export default {
         this.visibleLike = true;
       }
     },
-    photo() {},
+    photo() {}
   }
 };
 </script>

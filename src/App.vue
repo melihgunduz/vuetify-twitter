@@ -36,17 +36,34 @@
     <v-row>
       <v-col class=" d-none d-xl-block d-lg-block" sm="12" md="12" lg="1" xl="2"> </v-col>
       <Navigation class="d-none d-xl-block d-lg-block" />
-      <v-col sm="12" md="12" lg="5" xl="4">
+      <v-col
+          v-if="$route.name != 'Messages'"
+          sm="12" md="12" lg="5" xl="4">
         <router-view />
         <Fab></Fab>
       </v-col>
+      <v-col xl="8"
+      v-else
+      >
+        <router-view />
+        <Fab></Fab>
+      </v-col>
+
       <v-col
         class="d-none d-xl-block d-lg-block"
-        v-if="$route.name === 'Home' || $route.name === 'Profile' || $route.name === 'Notifications'"
+        v-if=" $route.name === 'Home' || $route.name === 'Profile' || $route.name === 'Notifications'"
         lg="3"
         xl="4"
       >
         <Agenda class="d-none d-xl-block d-lg-block"></Agenda>
+        <WhoToFollow class="d-none d-xl-block d-lg-block"></WhoToFollow>
+      </v-col>
+      <v-col
+          class="d-none d-xl-block d-lg-block"
+          v-if="$route.name === 'Explore'"
+          lg="3"
+          xl="4"
+      >
         <WhoToFollow class="d-none d-xl-block d-lg-block"></WhoToFollow>
       </v-col>
       <BottomNav></BottomNav>

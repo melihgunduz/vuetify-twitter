@@ -315,7 +315,7 @@
       </div>
     </v-card>
 
-    <v-card class="mx-auto" color="#f5f8fa" flat width="600">
+    <v-card hover class="mx-auto" color="#f5f8fa" flat width="600">
       <v-divider />
       <div class=" float-right">
         <v-btn icon>

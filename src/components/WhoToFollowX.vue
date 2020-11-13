@@ -1,6 +1,7 @@
 <template>
   <v-col>
-    <v-card flat class=" rounded-lg" color="grey" width="350">
+    <v-card flat class=" rounded-lg" color="grey" width="600">
+
       <div class="mx-4 pt-1 align-center font-weight-black text-h6">Kimi takip etmeli</div>
       <v-divider></v-divider>
       <v-list color="transparent">

@@ -1,9 +1,18 @@
 <template>
-  <v-card flat>
-    <v-card-title><v-toolbar-title class="d-block font-weight-black text-h6  ">Yer İşaretleri</v-toolbar-title></v-card-title>
-    <v-card-subtitle><div class="d-block">@john</div></v-card-subtitle>
-    <v-divider></v-divider>
-  </v-card>
+  <v-row>
+    <v-col>
+      <v-card flat>
+        <v-card-title><v-toolbar-title class="d-block font-weight-black text-h6  ">Yer İşaretleri</v-toolbar-title></v-card-title>
+        <v-card-subtitle><div class="d-block">@john</div></v-card-subtitle>
+        <v-divider></v-divider>
+        <div class="text-h6 text-center">Yer İşaretlerine henüz Tweet eklemedin</div>
+        <p class="text-center mx-10">
+          Eklediğinde burada görünecek.
+        </p>
+      </v-card>
+    </v-col>
+  </v-row>
+
 </template>
 
 <script>

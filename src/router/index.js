@@ -29,6 +29,11 @@ const routes = [
     path: '/messages',
     name: 'Messages',
     component: () => import(/* webpackChunkName: "profile" */ '../views/messages/')
+  },
+  {
+    path: '/account',
+    name: 'Profile',
+    component: () => import(/* webpackChunkName: "profile" */ '../views/profile/')
   }
 ];
 

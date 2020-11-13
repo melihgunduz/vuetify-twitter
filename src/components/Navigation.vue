@@ -60,7 +60,7 @@
       <v-btn
         width="100%"
         to="/messages"
-        depressed
+        text
         color="transparent"
         class="mt-4 text-capitalize font-weight-bold text-xl-h6 justify-start blue--text "
       >
@@ -94,9 +94,9 @@
         color="transparent"
         class="mt-4 text-capitalize font-weight-bold text-xl-h6 justify-start blue--text "
       >
-        <v-icon v-if="$route.name === 'Account'" color="blue">mdi-account</v-icon>
+        <v-icon v-if="$route.name === 'Profile'" color="blue">mdi-account</v-icon>
         <v-icon v-else color="black">mdi-account-outline</v-icon>
-        <div v-if="$route.name === 'Account'" class="text-capitalize font-weight-bold text-xl-h6 ml-3 blue--text">
+        <div v-if="$route.name === 'Profile'" class="text-capitalize font-weight-bold text-xl-h6 ml-3 blue--text">
           Profil
         </div>
         <div v-else class="text-capitalize font-weight-bold text-xl-h6 ml-3 black--text">Profil</div>

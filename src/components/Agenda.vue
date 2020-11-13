@@ -1,6 +1,6 @@
 <template>
   <v-col>
-    <v-card width="350" flat class="mb-2">
+    <v-card width="350" color="grey" flat class="mb-2">
       <v-toolbar flat>
         <v-text-field
           flat
@@ -14,7 +14,7 @@
       </v-toolbar>
     </v-card>
 
-    <v-card flat class="rounded-lg" width="350">
+    <v-card color="grey" flat class="rounded-lg" width="350">
       <v-btn color="transparent" text width="5px" class="float-right text-capitalize text-xl-h6 ">
         <v-icon color="blue">mdi-cog-outline</v-icon>
       </v-btn>

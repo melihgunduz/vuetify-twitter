@@ -1,6 +1,6 @@
 <template>
   <v-col sm="12">
-    <v-card>
+    <v-card flat>
       <v-toolbar flat>
         <v-toolbar-title class="font-weight-black ">Bildirimler</v-toolbar-title>
 

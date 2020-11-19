@@ -49,7 +49,7 @@
         class="d-none d-xl-block d-lg-block"
         v-if="
           $route.name === 'Home' ||
-            $route.name === 'Profile' ||
+            $route.name === 'Account' ||
             $route.name === 'Notifications' ||
             $route.name === 'Bookmarks'
         "
@@ -79,7 +79,7 @@ export default {
 
   data: () => ({
     items: [
-      { icon: 'mdi-account', text: 'Profil', to: '/profile' },
+      { icon: 'mdi-account', text: 'Profil', to: '/account' },
       { icon: 'mdi-filter-variant', text: 'Listeler', to: '/lists' },
       { icon: 'mdi-lists', text: 'Konu Başlıkları', to: '/' },
       { icon: 'mdi-bookmark-outline', text: 'Yer İşaretleri', to: '/bookmarks' }

@@ -6,18 +6,22 @@
           ><v-toolbar-title class="d-block font-weight-black text-h6  ">meligi</v-toolbar-title></v-card-title
         >
         <v-card-subtitle><div class="d-block">0 Tweet</div></v-card-subtitle>
-        <v-divider></v-divider>
-        <v-img
-          :src="
+
+        <v-card  flat color="#f5f8fa" width="600">
+          <v-divider></v-divider>
+       <v-img
+            :src="
             'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
           "
-          :lazy-src="
+            :lazy-src="
             'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/90-nissan-skyline-gt-r-r34-ubg-one-we-found.jpg?itok=vy93Epzx'
           "
-          height="260"
-          width="650"
-        ></v-img>
-        <v-btn>Profili ayarla</v-btn>
+            height="100%"
+            width="100%"
+        ></v-img></v-card>
+
+
+       <!-- <v-btn>Profili ayarla</v-btn>-->
 
         <v-tabs v-model="tabs" fixed-tabs>
           <v-tab class="text-capitalize ">
